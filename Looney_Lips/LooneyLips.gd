@@ -8,5 +8,15 @@ func _ready():
 	#print(story % prompts)
 	#person = " Someone Else "
 	#print("Once upon a time a gentle, called" + person + "the most beautiful prince in the world")
-
-	$DisplayText.text = "Qualquer coisa na tela"
+	#$DisplayText.text = "Qualquer coisa na tela"
+	$VBoxContainer/DisplayText.text = story % prompts
+	
+	
+func _on_PlayerText_text_entered(new_text):
+	update_DisplayText(new_text)
+	
+	
+func update_DisplayText(words):
+	$VBoxContainer/DisplayText.text = words
+	$VBoxContainer/HBoxContainer/PlayerText.clear()
+	
