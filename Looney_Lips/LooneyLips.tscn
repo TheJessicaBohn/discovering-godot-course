@@ -64,6 +64,7 @@ margin_top = 479.0
 margin_right = 976.0
 margin_bottom = 552.0
 custom_constants/separation = 12
+alignment = 2
 
 [node name="PlayerText" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
 margin_right = 810.0
@@ -98,3 +99,4 @@ __meta__ = {
 }
 [connection signal="text_entered" from="VBoxContainer/HBoxContainer/PlayerText" to="." method="_on_PlayerText_text_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="gui_input" from="VBoxContainer/HBoxContainer/Label" to="." method="_on_Label_gui_input"]
