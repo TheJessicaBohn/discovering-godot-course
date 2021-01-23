@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://LooneyLips.gd" type="Script" id=1]
 [ext_resource path="res://gfx/blackboard.jpg" type="Texture" id=2]
 [ext_resource path="res://gfx/Feltpen.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://gfx/blue_button11.png" type="Texture" id=4]
 [ext_resource path="res://gfx/blue_button12.png" type="Texture" id=5]
+[ext_resource path="res://Story0.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -97,6 +98,28 @@ text = "OK"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="StoryBook" type="Node" parent="."]
+
+[node name="Story0" type="Node" parent="StoryBook"]
+script = ExtResource( 6 )
+prompts = PoolStringArray( "a name", "a noun", "an adverb", "an adjective" )
+story = "Once upon a time someone called %s ate a %s flavoured sandwich which made him fell all %s inside. Is was a %s day"
+
+[node name="Story1" type="Node" parent="StoryBook"]
+script = ExtResource( 6 )
+prompts = PoolStringArray( "a noun", "a name", "an adjective", "a name again" )
+story = "There once was %s called %s who searched far and wide for the mythical %s noun of %s."
+
+[node name="Story2" type="Node" parent="StoryBook"]
+script = ExtResource( 6 )
+prompts = PoolStringArray( "a name", "a thing", "a feeling", "a feeling again ", "some thing" )
+story = "Once upon a time a  %s called %s and  felt  very. It was a %s day %s for all good %s."
+
+[node name="Story3" type="Node" parent="StoryBook"]
+script = ExtResource( 6 )
+prompts = PoolStringArray( "a thing", "a name", "a description word (an adjective)", "a thing again" )
+story = "There once was %s called %s that lived as %s as  %s."
 [connection signal="text_entered" from="VBoxContainer/HBoxContainer/PlayerText" to="." method="_on_PlayerText_text_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="gui_input" from="VBoxContainer/HBoxContainer/Label" to="." method="_on_Label_gui_input"]
