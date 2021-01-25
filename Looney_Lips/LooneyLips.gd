@@ -18,22 +18,22 @@ func _ready():
 
 func set_current_story():
 	randomize()
-	var stories = get_from_jason("StoryBook.json")
-	current_story = stories[randi() % stories.size()]
-#	var stories = $StoryBook.get_child_count()
-#	var selected_story = randi() % stories
-#	current_story.prompts = $StoryBook.get_child(selected_story).prompts
-#	current_story.story = $StoryBook.get_child(selected_story).story
+#	var stories = get_from_jason("StoryBook.json")
+#	current_story = stories[randi() % stories.size()]
+	var stories = $StoryBook.get_child_count()
+	var selected_story = randi() % stories
+	current_story.prompts = $StoryBook.get_child(selected_story).prompts
+	current_story.story = $StoryBook.get_child(selected_story).story
 #	current_story = template[randi() % template.size()]
 
 
-func get_from_jason(filename):
-	var file = File.new() 
-	file.open(filename, File.READ)
-	var text = file.get_as_text()
-	var data =  parse_json(text)
-	file.close()
-	return data
+#func get_from_jason(filename):
+#	var file = File.new() 
+#	file.open(filename, File.READ)
+#	var text = file.get_as_text()
+#	var data =  parse_json(text)
+#	file.close()
+#	return data
 	
 	
 func _on_PlayerText_text_entered(_new_text):
