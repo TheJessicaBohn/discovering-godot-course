@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://GFX/HUD/bannerHanging.png" type="Texture" id=1]
 [ext_resource path="res://GFX/HUD/coin_bronze.png" type="Texture" id=2]
 [ext_resource path="res://GFX/HUD/lifes.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/candles_.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://GUI/GUI.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -13,6 +14,7 @@ use_filter = true
 font_data = ExtResource( 4 )
 
 [node name="GUI" type="CanvasLayer"]
+script = ExtResource( 5 )
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
@@ -37,8 +39,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 12.0
-margin_top = 12.0
-margin_right = -12.0
+margin_right = -30.0
 margin_bottom = -12.0
 alignment = 1
 __meta__ = {
@@ -47,7 +48,7 @@ __meta__ = {
 
 [node name="CoinCount" type="Label" parent="Control/TextureRect/HBoxContainer"]
 margin_top = 4.0
-margin_right = 60.0
+margin_right = 51.0
 margin_bottom = 66.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
@@ -55,15 +56,15 @@ text = "0"
 align = 2
 
 [node name="CoinIcon" type="TextureRect" parent="Control/TextureRect/HBoxContainer"]
-margin_left = 64.0
-margin_right = 124.0
+margin_left = 55.0
+margin_right = 115.0
 margin_bottom = 71.0
 texture = ExtResource( 2 )
 
 [node name="LifeCount" type="Label" parent="Control/TextureRect/HBoxContainer"]
-margin_left = 128.0
+margin_left = 119.0
 margin_top = 4.0
-margin_right = 188.0
+margin_right = 170.0
 margin_bottom = 66.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
@@ -74,7 +75,7 @@ __meta__ = {
 }
 
 [node name="LifeIcon" type="TextureRect" parent="Control/TextureRect/HBoxContainer"]
-margin_left = 192.0
-margin_right = 244.0
+margin_left = 174.0
+margin_right = 226.0
 margin_bottom = 71.0
 texture = ExtResource( 3 )
