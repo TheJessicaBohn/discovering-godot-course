@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Tileset.tres" type="TileSet" id=2]
@@ -7,12 +7,13 @@
 [ext_resource path="res://Items/JumpPad.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levels/GameState.gd" type="Script" id=6]
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Items/Coin.tscn" type="PackedScene" id=8]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 246.385, 539.903 )
+position = Vector2( 188.235, 473.927 )
 collision_mask = 6
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -52,6 +53,11 @@ position = Vector2( 4941.04, 1062.52 )
 
 [node name="SpikeTop10" parent="Hazards" instance=ExtResource( 3 )]
 position = Vector2( 3068.01, 1893.84 )
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 540, 323.716 )
 
 [node name="JumpPads" type="Node" parent="."]
 
